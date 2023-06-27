@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="layout" name="Website GA4" inherit_id="website.layout">
+        <xpath expr="//t[@t-if='website and website.google_analytics_key and not editable']" position="replace">
+            <t t-if="website and website.google_analytics_key and not editable">
+                <script id="tracking_code" async="1" t-attf-src="https://www.googletagmanager.com/gtag/js?id={{ website.google_analytics_key }}"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', '<t t-esc="website.google_analytics_key"/>', <t t-out="json.dumps(website._ga4_params(request))"/>);
+                </script>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="signup" name="GA4 Sign Up Form" inherit_id="auth_signup.signup">
+        <xpath expr="//div[hasclass('oe_login_buttons')]/button" position="attributes">
+            <attribute name="onclick" separator=";" add="gtagClick()"/>
+        </xpath>
+        <xpath expr="//div[hasclass('oe_login_buttons')]" position="after">
+            <script type="text/javascript">
+                function gtagClick() {<t t-if="website and website.google_analytics_key and not editable">gtag('event', 'sign_up', { method: 'Odoo' });</t>};
+            </script>
+        </xpath>
+    </template>
+
+    <template id="login" name="GA4 Login Form" inherit_id="web.login">
+        <xpath expr="//div[contains(@t-attf-class, 'oe_login_buttons')]/button" position="attributes">
+            <attribute name="onclick" separator=";" add="gtagClick()"/>
+        </xpath>
+        <xpath expr="//div[contains(@t-attf-class, 'oe_login_buttons')]" position="after">
+            <script type="text/javascript">
+                function gtagClick() {<t t-if="website and website.google_analytics_key and not editable">gtag('event', 'login', { method: 'Odoo' });</t>};
+            </script>
+        </xpath>
+    </template>
+
+</odoo>
