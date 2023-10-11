@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <menuitem id="smart_analytics_root_menu" name="Smart Analytics" web_icon="dashboard_frame,static/description/icon.png" groups="dashboard_frame.group_smart_analytics_dashboard"/>
+        <menuitem id="smart_analytics_settings_menu" parent="smart_analytics_root_menu" name="Settings" sequence="90" groups="dashboard_frame.group_smart_analytics_settings"/>
+    </data>
+</odoo>

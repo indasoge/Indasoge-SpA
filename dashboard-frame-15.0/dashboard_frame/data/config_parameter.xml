@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record forcecreate="True" id="dashboard_url_config_parameter" model="ir.config_parameter">
+            <field name="key">dashboard.url</field>
+            <field name="value">https://datastudio.google.com/embed/reporting/39e8a2dd-6126-4409-b23e-78ef3bce84d7/page/4b7hC</field>
+        </record>
+    </data>
+</odoo>
