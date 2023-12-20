@@ -14,6 +14,9 @@ odoo.define('dashboard_frame.smart_analytics.url2iframe', function (require) {
         _render: function () {
             this.$el.html(QWeb.render('smartanalytics.iframe', {
                 url: this.value,
+                isFullScreen: this.recordData.is_full_screen,
+                height: this.recordData.height_size,
+                width: this.recordData.width_size,
             }));
         },
     });
