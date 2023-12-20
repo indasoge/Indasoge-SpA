@@ -7,12 +7,15 @@ class SmartAnalyticsDashboard(models.Model):
     _order = 'sequence, id'
     _inherit = ['image.mixin']
 
-    name = fields.Char(string='Name', required=True)
-    url = fields.Char(string='Dashboard url', required=True)
+    name = fields.Char('Name', required=True)
+    url = fields.Char('Dashboard url', required=True)
+    is_full_screen = fields.Boolean('Is Full Screen', default=True)
+    height_size = fields.Integer('Height px', default=90)
+    width_size = fields.Integer('Width px', default=70)
     action_id = fields.Many2one('ir.actions.act_window', string='Action')
     menu_id = fields.Many2one('ir.ui.menu', string='Menu')
     group_ids = fields.Many2many('res.groups', string="Access Groups")
-    sequence = fields.Integer(string='Sequence', default=10)
+    sequence = fields.Integer('Sequence', default=10)
 
     def write(self, vals):
         res = super().write(vals)
