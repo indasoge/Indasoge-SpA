@@ -1,0 +1,1 @@
+pdf417gen==0.7.1 #Add External depency on pdf417gen for migrations
