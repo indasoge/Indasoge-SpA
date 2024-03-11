@@ -1,6 +1,6 @@
 {
     "name": "Smart analytics - Dashboard Frame",
-    'version': '16.0',
+    'version': '17.0.0.0',
     'category': 'Reporting',
     "summary": "Dashboards for Smart Analytics",
     'description': """
@@ -8,14 +8,13 @@
     """,
     "author": "Idealis Consulting",
     'website': "https://idealisconsulting.com",
-    "depends": ["base", 'web'],
+    "depends": ["base", 'web', 'mail'],
     "license": "LGPL-3",
     "data": [
         # Security
+        'security/ir_rule.xml',
         'security/security.xml',
         'security/ir.model.access.csv',
-        # Wizards
-        'wizards/create_menu.xml',
         # Views
         'views/menuitems.xml',
         'views/smart_analytics_dashboard.xml',
@@ -24,6 +23,9 @@
     "installable": True,
     'assets': {
         'web.assets_backend': [
-            'dashboard_frame/static/src/**/*']
+            'dashboard_frame/static/src/js/smart_analytics_form_renderer.js',
+            'dashboard_frame/static/src/xml/smartanalytics_dashboard_kanban.xml',
+            'dashboard_frame/static/src/css/smartanalytics.css',
+        ]
     }
 }

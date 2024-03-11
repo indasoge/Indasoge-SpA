@@ -7,14 +7,14 @@
 
 {
     'name': 'Google Analytics 4 Global Site Tag (gtag.js)',
-    'version': '16.0.2.0.0',
+    'version': '17.0.1.1.0',
     'category': 'Website',
     'author': 'Garazd Creation',
     'website': 'https://garazd.biz/shop',
     'license': 'OPL-1',
     'summary': 'Google Analytics 4 Global Site Tag (gtag.js) | Odoo GA4 integration',
     'images': ['static/description/banner.png', 'static/description/icon.png'],
-    'live_test_url': 'https://garazd.biz/r/CN9',
+    'live_test_url': 'https://garazd.biz/r/S68',
     'depends': [
         'website',
     ],
