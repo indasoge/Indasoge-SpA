@@ -6,32 +6,28 @@
         <field name="model">res.config.settings</field>
         <field name="inherit_id" ref="website.res_config_settings_view_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//div[@id='google_analytics_setting']" position="after">
-                <div class="col-12 col-lg-6 o_setting_box" id="google_analytics_4_setting">
-                    <div class="o_setting_left_pane">
-                        <field name="has_google_analytics_4"/>
-                    </div>
-                    <div class="o_setting_right_pane">
-                        <label for="has_google_analytics_4" string="Google Analytics 4 (Alternative Tracking)"/>
-                        <span class="fa fa-lg fa-globe" title="Values set here are website-specific." groups="website.group_multi_website"/>
-                        <div class="text-muted">
-                            Use a new Google Analytics 4 to track website activities
+            <xpath expr="//setting[@id='google_analytics_setting']" position="after">
+                <setting id="google_analytics_4_setting"
+                         string="Google Analytics 4 (Alternative Tracking)"
+                         documentation="https://garazd.biz/en/shop/google-analytics-4-global-site-tag-gtag-js-8"
+                         help="Use a new Google Analytics 4 to track website activities">
+                    <field name="has_google_analytics_4"/>
+                    <div class="content-group" invisible="not has_google_analytics_4">
+                        <div class="row mt16">
+                            <label class="col-lg-3 o_light_label text-nowrap" string="Tracking ID" for="ga4_tracking_key"/>
+                            <field name="ga4_tracking_key" placeholder="G-XXXXXXXXXX" required="has_google_analytics_4"/>
                         </div>
-                        <div class="content-group" attrs="{'invisible': [('has_google_analytics_4', '=', False)]}">
-                            <div class="row mt16">
-                                <label class="col-lg-3 o_light_label" string="Tracking ID" for="ga4_tracking_key"/>
-                                <field name="ga4_tracking_key" placeholder="G-XXXXXXXXXX" attrs="{'required': [('has_google_analytics_4', '=', True)]}"/>
-                                <label class="col-lg-3 o_light_label" string="Debug Mode" for="ga4_debug_mode"/>
-                                <field name="ga4_debug_mode"/>
-                            </div>
-                        </div>
-                        <div attrs="{'invisible': [('has_google_analytics_4', '=', False)]}" name="google_analytics_4_help">
-                            <a href="https://support.google.com/analytics/answer/10089681" class="oe_link" target="_blank">
-                                <i class="fa fa-arrow-right"/> How to get started with the new Google Analytics 4
-                            </a>
+                        <div class="row">
+                            <label class="col-lg-3 o_light_label text-nowrap" string="Debug Mode" for="ga4_debug_mode"/>
+                            <field name="ga4_debug_mode" class="oe_inline"/>
                         </div>
                     </div>
-                </div>
+                    <div invisible="not has_google_analytics_4" name="google_analytics_4_help">
+                        <a href="https://support.google.com/analytics/answer/10089681" class="oe_link" target="_blank">
+                            <i class="oi oi-arrow-right"/> How to get started with the new Google Analytics 4
+                        </a>
+                    </div>
+                </setting>
             </xpath>
         </field>
     </record>

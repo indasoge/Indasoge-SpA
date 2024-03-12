@@ -1,0 +1,56 @@
+.kanban-sma{
+  width: 350px;
+  height: 250px
+}
+
+.modal.modal-fullscreen .modal-dialog,
+.modal.modal-fullscreen .modal-content {
+  bottom: 0;
+  overflow: hidden !important;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.modal.modal-fullscreen .modal-dialog {
+  margin: 0;
+  width: 100%;
+  animation-duration:0.6s;
+}
+.modal.modal-fullscreen .modal-content {
+  border: none;
+  overflow: hidden;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: inherit;
+  -moz-box-shadow: inherit;
+  -o-box-shadow: inherit;
+  box-shadow: inherit;
+  color:rgb(55, 65, 81);
+}
+.modal.modal-fullscreen.force-fullscreen {
+  /* Remove the padding inside the body */
+}
+.modal.modal-fullscreen.force-fullscreen .modal-body {
+  padding: 0 !important;
+  overflow: hidden !important;
+
+}
+.modal.modal-fullscreen.force-fullscreen .modal-header,
+.modal.modal-fullscreen.force-fullscreen {
+  position: absolute;
+  overflow: hidden !important;
+  bottom: 0;
+}
+.modal.modal-fullscreen.force-fullscreen .modal-header {
+  top: 0;
+}
+
+/* The styles above for the modal-body, footer, etc aren't being applied so I tried the ones below and they work */
+.dashboard_frame_modal_body {
+  height: 100%;
+  padding: 0 !important;
+  width: 100%;
+  overflow: hidden !important;
+  color:rgb(55, 65, 81);
+}

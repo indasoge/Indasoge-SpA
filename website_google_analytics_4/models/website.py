@@ -11,7 +11,7 @@ class Website(models.Model):
 
     def _ga4_params(self):
         self.ensure_one()
-        return self.ga4_debug_mode and {'debug_mode': True} or {}
+        return {'debug_mode': True} if self.ga4_debug_mode else {}
 
     def _ga4_configs(self):
         self.ensure_one()
