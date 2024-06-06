@@ -23,5 +23,6 @@
 
     # external depency on pdf417gen
     'external_dependencies': {'python': ['pdf417gen']},
-    
+
+    'license': 'OPL-1',
 }
