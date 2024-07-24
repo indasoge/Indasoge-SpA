@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- Herencia de la plantilla custom_header del repositorio Odoo 17.0 para resolver error int() -->
+    <template id="custom_header_inherit" inherit_id="l10n_cl.custom_header">
+        <xpath expr="//t[t-set='report_number']" position="replace">
+            <t t-set="report_number" t-value="o.l10n_latam_document_number"/>
+        </xpath>
+    </template>
+
+</odoo>
