@@ -45,8 +45,8 @@
             <attribute name="t-value">current_subtotal + l10n_cl_values['price_subtotal']</attribute>
         </t>
 
-        <xpath expr="//th[@name='th_subtotal']/span[@groups='account.group_show_line_subtotals_tax_included']" position="replace">
-            <span groups="account.group_show_line_subtotals_tax_included">Amount</span>
+        <xpath expr="//th[@name='th_subtotal']/span" position="replace">
+            <span>Amount</span>
         </xpath>
 
         <span t-field="line.price_subtotal" position="attributes">
