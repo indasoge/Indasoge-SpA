@@ -24,6 +24,16 @@
 
         <!-- remove default partner address -->
         <t t-set="address" position="replace"/>
+        
+        <xpath expr="//div[@name='address_not_same_as_shipping']" position="replace">
+            <div name="address_not_same_as_shipping"/>
+        </xpath>
+        <xpath expr="//div[@name='address_same_as_shipping']" position="replace">
+            <div name="address_same_as_shipping"/>
+        </xpath>
+        <xpath expr="//div[@name='no_shipping']" position="replace">
+            <div name="no_shipping"/>
+        </xpath>
 
         <xpath expr="//h2" position="replace"/>
 
@@ -62,8 +72,13 @@
         <xpath expr="//th[@name='th_taxes']" position="replace"/>
         <xpath expr="//span[@id='line_tax_ids']/.." position="replace"/>
 
-        <!-- <p name="payment_term" position="replace"/>
-        <xpath expr="//span[@t-field='o.payment_reference']/../.." position="replace"/> -->
+        <!-- <p name="payment_term" position="replace"/> -->
+
+        <!-- Remove payment reference field -->
+        <xpath expr="//span[@t-field='o.payment_reference']/../.." position="replace">
+            <div/>
+        </xpath>
+
 
         <!-- replace information section and usage chilean style -->
         <div id="informations" position="replace">
@@ -81,7 +96,7 @@
 
         <xpath expr="//div[@id='total']" position="after">
             <div class="row">
-                <div name="stamp" class="col-4 text-center">
+                <div name="stamp" class="col-6 text-center">
                     <br/>
                     <br/>
                     <t t-if="o.l10n_cl_sii_barcode">
@@ -97,7 +112,7 @@
             </t>
         </t>
     </div>
-    <div name="transferable-legend" class="col-8 pull-right">
+    <div name="transferable-legend" class="col-12 pull-right">
         <t t-if="o.l10n_latam_document_type_id._is_doc_type_electronic_ticket()">
                         The VAT tax of this boleta is: <span t-esc="o._l10n_cl_get_amounts()['vat_amount']" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
         </t>
