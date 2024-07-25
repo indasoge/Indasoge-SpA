@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Herencia de la plantilla custom_header del repositorio Odoo 17.0 para resolver error int() -->
+    <template id="custom_header_inherit" inherit_id="l10n_cl.custom_header">
+        <xpath expr="//t[@t-set='report_number']" position="attributes">
+            <attribute name="t-value">o.l10n_latam_document_number.isdigit() and int(o.l10n_latam_document_number) or o.l10n_latam_document_number</attribute>
+        </xpath>
+    </template>
+</odoo>
