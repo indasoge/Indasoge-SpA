@@ -12,8 +12,7 @@
         <field name="attachment">(object.state == 'posted') and ((object.name or 'INV').replace('/','_')+'.pdf')</field>
         <field name="binding_model_id" ref="account.model_account_move"/>
         <field name="binding_type">report</field>
-        <field name="groups_id" eval="[(4, ref('account.group_account_invoice')),
- (4, ref('account.group_account_readonly'))]"/>
+        <field name="groups_id" eval="[(4, ref('account.group_account_invoice')), (4, ref('account.group_account_readonly'))]"/>
     </record>
 
     <template id="report_invoice_document" inherit_id="account.report_invoice_document" primary="True">
@@ -84,30 +83,33 @@
         </div>
 
         <xpath expr="//div[@id='total']" position="after">
-         
-                <div class="col-12" style="display: flex; justify-content: space-between;">
-                    <div name="stamp" style="flex: 0 0 45%; text-align: left;">
-                        <t t-if="o.l10n_cl_sii_barcode">
-                            <t t-set="barcode_stamp" t-value="o._pdf417_barcode(o.l10n_cl_sii_barcode)"/>
-                            <t t-if="barcode_stamp">
+                <div class="row">
+                <div class="col-12" style="position: relative;">
+                <div name="stamp" style="position: absolute; left: -550px; top: 0;" class="col-12 text-center">
+                <br/>
+                <br/>
+                <t t-if="o.l10n_cl_sii_barcode">
+                                <t t-set="barcode_stamp" t-value="o._pdf417_barcode(o.l10n_cl_sii_barcode)"/>
+                                <t t-if="barcode_stamp">
                                 <img class="img-fluid" t-attf-src="data:image/*;base64,{{barcode_stamp}}"/>
                                 <p t-att-style="'color: %s;' % o.company_id.primary_color" class="text-center small">
-                                    Timbre Electrónico SII<br/>
-                                    Resolución Nº: <span t-field="o.company_id.l10n_cl_dte_resolution_number"/>
-                                    de Fecha: <span t-field="o.company_id.l10n_cl_dte_resolution_date" t-field-options="{&quot;widget&quot;: &quot;date&quot;}"/>
-                                    <span name="verification_url">Verifique documento en www.sii.cl</span>
+                                Timbre Electrónico SII<br/>
+                                Resolución Nº: <span t-field="o.company_id.l10n_cl_dte_resolution_number"/>
+                                de Fecha: <span t-field="o.company_id.l10n_cl_dte_resolution_date" t-field-options="{&quot;widget&quot;: &quot;date&quot;}"/>
+                                <span name="verification_url">Verifique documento en www.sii.cl</span>
                                 </p>
-                            </t>
-                        </t>
-            
-                    <div name="transferable-legend" style="flex: 0 0 45%;">
-                        <t t-if="o.l10n_latam_document_type_id._is_doc_type_electronic_ticket()">
-                            The VAT tax of this boleta is: <span t-esc="o._l10n_cl_get_amounts()['vat_amount']" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
-                        </t>
-                        <br/>
-                        <br/>
-                        <div class="border p-1">
-                            <div class="row">
+                                </t>
+                </t>
+                </div>
+
+ <div name="transferable-legend" style="position: absolute; left: -180px; top: 0; width: 60%;">
+            <t t-if="o.l10n_latam_document_type_id._is_doc_type_electronic_ticket()">
+                The VAT tax of this boleta is: <span t-esc="o._l10n_cl_get_amounts()['vat_amount']" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+            </t>
+            <br/>
+            <br/>
+                        <div class="border p-1" style="width: 550px;">
+                            <div class="row" style="padding-top: 4px; padding-bottom: 4px;">
                                 <div class="col-2">
                                     Nombre
                                 </div>
@@ -115,8 +117,8 @@
                                     : _______________________________________________________________
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-2">
+                            <div class="row" style="padding-top: 4px; padding-bottom: 4px;">
+                                <div class="col-2" >
                                     R.U.T.
                                 </div>
                                 <div class="col-4">
@@ -129,7 +131,7 @@
                                     : _____________________
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row" style="padding-top: 4px; padding-bottom: 4px;">
                                 <div class="col-2">
                                     Recinto
                                 </div>
@@ -139,15 +141,15 @@
                                 <div class="col-2">
                                     Firma
                                 </div>
-                                <div class="col-4">
+                                <div class="col-4" style="padding-top: 4px; padding-bottom: 4px;">
                                     : _____________________
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12 small">
-                                    EL ACUSE DE RECIBO QUE SE DECLARA EN ESTE ACTO, DE ACUERDO A LO DISPUESTO EN LA LETRA b)
-                                    DEL Art.4°, Y LA LETRA c) DEL Art.5° DE LA LEY 19.983, ACREDITA QUE LA ENTREGA DE MERCADERIAS O
-                                    SERVICIOS(S) PRESTADO(S) HA(N) SIDO RECIBIDO(S).
+                                    EL ACUSE DE RECIBO QUE SE DECLARA EN ESTE ACTO, DE ACUERDO A LO DISPUESTO EN LA
+                                     LETRA b) DEL Art.4°, Y LA LETRA c) DEL Art.5° DE LA LEY 19.983, ACREDITA QUE LA ENTREGA DE 
+                                    MERCADERIAS O SERVICIOS(S) PRESTADO(S) HA(N) SIDO RECIBIDO(S).
                                 </div>
                             </div>
                         </div>
