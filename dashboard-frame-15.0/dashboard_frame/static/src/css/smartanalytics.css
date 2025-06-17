@@ -1,56 +1,63 @@
-.kanban-sma{
-  width: 350px;
-  height: 250px
+html .o_web_client {
+    overflow: visible !important;
+}
+.o_action_manager {
+    overflow: visible !important;
+}
+.o_smart_analytics_dashboard_iframe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: white;
 }
 
-.modal.modal-fullscreen .modal-dialog,
-.modal.modal-fullscreen .modal-content {
-  bottom: 0;
-  overflow: hidden !important;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-.modal.modal-fullscreen .modal-dialog {
-  margin: 0;
-  width: 100%;
-  animation-duration:0.6s;
-}
-.modal.modal-fullscreen .modal-content {
-  border: none;
-  overflow: hidden;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  -webkit-box-shadow: inherit;
-  -moz-box-shadow: inherit;
-  -o-box-shadow: inherit;
-  box-shadow: inherit;
-  color:rgb(55, 65, 81);
-}
-.modal.modal-fullscreen.force-fullscreen {
-  /* Remove the padding inside the body */
-}
-.modal.modal-fullscreen.force-fullscreen .modal-body {
-  padding: 0 !important;
-  overflow: hidden !important;
-
-}
-.modal.modal-fullscreen.force-fullscreen .modal-header,
-.modal.modal-fullscreen.force-fullscreen {
-  position: absolute;
-  overflow: hidden !important;
-  bottom: 0;
-}
-.modal.modal-fullscreen.force-fullscreen .modal-header {
-  top: 0;
+.o_iframe_container {
+    width: 100%;
+    height: calc(100% - 50px);
 }
 
-/* The styles above for the modal-body, footer, etc aren't being applied so I tried the ones below and they work */
-.dashboard_frame_modal_body {
-  height: 100%;
-  padding: 0 !important;
-  width: 100%;
-  overflow: hidden !important;
-  color:rgb(55, 65, 81);
+.o_dashboard_navigation {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.o_smart_analytics_dashboard_iframe {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.o_iframe_header {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.o_iframe_header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.o_iframe_header h2:hover {
+    color: #0056b3;
+}
+
+.o_iframe_container {
+    flex-grow: 1;
+}
+
+.o_iframe_container iframe {
+    height: 100%;
+}
+a.o_capture {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    line-height: 1.5;
 }

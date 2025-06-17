@@ -1,0 +1,446 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dashboard_frame
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-13 13:26+0000\n"
+"PO-Revision-Date: 2024-12-13 13:26+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dashboard_frame
+#: model:mail.template,subject:dashboard_frame.dashboard_screenshot_email_template
+msgid "${object.subject}"
+msgstr ""
+
+#. module: dashboard_frame
+#: model:mail.template,body_html:dashboard_frame.dashboard_screenshot_email_template
+msgid ""
+"<div style=\"margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif;\">\n"
+"                    <h2 style=\"color: #1f497d;\">Dashboard Screenshot: ${object.dashboard_name}</h2>\n"
+"                    <p>Dear Recipient,</p>\n"
+"                    <p>${object.body | safe}</p>\n"
+"                    <p style=\"margin-top: 20px;\">\n"
+"                        You can find the dashboard screenshot attached to this email.\n"
+"                    </p>\n"
+"                    <div style=\"margin-top: 20px;\">\n"
+"                        <p>Best regards,</p>\n"
+"                        <p>${user.name}</p>\n"
+"                    </div>\n"
+"                    <div style=\"margin-top: 20px; font-size: 12px; color: #888888;\">\n"
+"                        <p>This email was sent from ${user.company_id.name}.</p>\n"
+"                        <p>If you have any questions, please contact us at ${user.company_id.email}.</p>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif;\">\n"
+"                    <h2 style=\"color: #1f497d;\">Capture d'écran du tableau de bord : ${object.dashboard_name}</h2>\n"
+"                    <p>Cher destinataire,</p>\n"
+"                    <p>${object.body | safe}</p>\n"
+"                    <p style=\"margin-top: 20px;\">\n"
+"                        La capture d'écran du tableau de bord est jointe à cet e-mail.\n"
+"                    </p>\n"
+"                    <div style=\"margin-top: 20px;\">\n"
+"                        <p>Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées,</p>\n"
+"                        <p>${user.name}</p>\n"
+"                    </div>\n"
+"                    <div style=\"margin-top: 20px; font-size: 12px; color: #888888;\">\n"
+"                        <p>Ce courriel a été envoyé par ${user.company_id.name}.</p>\n"
+"                        <p>Si vous avez des questions, veuillez nous contacter à l'adresse suivante ${user.company_id.email}.</p>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__group_ids
+msgid "Access Groups"
+msgstr "Groupes d'accès"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__action_id
+msgid "Action"
+msgstr "Action"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__message_needaction
+msgid "Action Needed"
+msgstr "Action nécessaire"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__message_attachment_count
+msgid "Attachment Count"
+msgstr "Nombre de pièces jointes"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,help:dashboard_frame.field_dashboard_email_wizard__screenshot
+msgid "Binary data of the dashboard screenshot"
+msgstr "Données binaires de la capture d'écran du tableau de bord"
+
+#. module: dashboard_frame
+#: model_terms:ir.ui.view,arch_db:dashboard_frame.view_dashboard_email_wizard_form
+#: model_terms:ir.ui.view,arch_db:dashboard_frame.view_model_menu_create
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: dashboard_frame
+#. odoo-javascript
+#: code:addons/dashboard_frame/static/src/xml/smartanalytics_dashboard_kanban.xml:0
+msgid "Capture and send by email"
+msgstr "Capture et envoi par courrier électronique"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,help:dashboard_frame.field_dashboard_email_wizard__body
+msgid "Compose the email body here"
+msgstr "Composez le corps du message ici"
+
+#. module: dashboard_frame
+#. odoo-python
+#: code:addons/dashboard_frame/models/smart_analytics_dashboard.py:0
+#: model_terms:ir.ui.view,arch_db:dashboard_frame.view_model_menu_create
+msgid "Create Menu"
+msgstr "Créer un menu"
+
+#. module: dashboard_frame
+#: model:ir.model,name:dashboard_frame.model_smart_analytics_dashboard_create_menu
+msgid "Create Menu for Smart analytics dashboard"
+msgstr "Créer un menu pour le tableau de bord Smart Analytics"
+
+#. module: dashboard_frame
+#: model_terms:ir.ui.view,arch_db:dashboard_frame.smart_analytics_dashboard_settings_form
+msgid "Create a Menu"
+msgstr "Créer un menu"
+
+#. module: dashboard_frame
+#. odoo-javascript
+#: code:addons/dashboard_frame/static/src/xml/smartanalytics_dashboard_kanban.xml:0
+msgid "Create your first dashboard to get started!"
+msgstr "Créez votre premier tableau de bord pour commencer !"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_dashboard_email_wizard__create_uid
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__create_uid
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard_create_menu__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_dashboard_email_wizard__create_date
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__create_date
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard_create_menu__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_dashboard_email_wizard__dashboard_id
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard_create_menu__dashboard_id
+#: model:res.groups,name:dashboard_frame.group_smart_analytics_dashboard
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+#. module: dashboard_frame
+#: model:ir.model,name:dashboard_frame.model_dashboard_email_wizard
+msgid "Dashboard Email Wizard"
+msgstr "Assistant d'envoie de tableau de bord par mail"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_dashboard_email_wizard__dashboard_name
+msgid "Dashboard Name"
+msgstr "Nom du tableau de bord"
+
+#. module: dashboard_frame
+#: model:mail.template,name:dashboard_frame.dashboard_screenshot_email_template
+msgid "Dashboard Screenshot Email"
+msgstr "Capture d'écran du tableau de bord Email"
+
+#. module: dashboard_frame
+#: model:ir.actions.act_window,name:dashboard_frame.smart_analytics_dashboard_settings_action
+#: model:ir.ui.menu,name:dashboard_frame.smart_analytics_dashboard_settings_menu
+msgid "Dashboard Settings"
+msgstr "Paramètres du tableau de bord"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__url
+msgid "Dashboard URL"
+msgstr "URL du tableau de bord"
+
+#. module: dashboard_frame
+#: model:ir.model,name:dashboard_frame.model_smart_analytics_dashboard
+msgid "Dashboard for Smart Analytics"
+msgstr "Tableau de bord pour une analyse intelligente"
+
+#. module: dashboard_frame
+#. odoo-javascript
+#: code:addons/dashboard_frame/static/src/xml/smartanalytics_dashboard_kanban.xml:0
+#: model:ir.actions.client,name:dashboard_frame.smart_analytics_dashboard_action_client
+#: model:ir.ui.menu,name:dashboard_frame.smart_analytics_dashboard_menu
+msgid "Dashboards"
+msgstr "Tableaux de bord"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_dashboard_email_wizard__display_name
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__display_name
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard_create_menu__display_name
+msgid "Display Name"
+msgstr "Nom d'affichage"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,help:dashboard_frame.field_dashboard_email_wizard__subject
+msgid "Email subject line"
+msgstr "Objet du courriel"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,help:dashboard_frame.field_dashboard_email_wizard__recipient_emails
+msgid "Enter recipient email addresses, separated by commas"
+msgstr "Saisir les adresses électroniques des destinataires, séparées par des virgules"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__message_follower_ids
+msgid "Followers"
+msgstr "Suiveurs"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Suiveurs (partenaires)"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__has_message
+msgid "Has Message"
+msgstr "A un message"
+
+#. module: dashboard_frame
+#. odoo-javascript
+#: code:addons/dashboard_frame/static/src/xml/smartanalytics_dashboard_kanban.xml:0
+msgid "Home menu"
+msgstr "Menu d'accueil"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_dashboard_email_wizard__id
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__id
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard_create_menu__id
+msgid "ID"
+msgstr "ID"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,help:dashboard_frame.field_smart_analytics_dashboard__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: dashboard_frame
+#: model:ir.model.fields,help:dashboard_frame.field_smart_analytics_dashboard__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si cette case est cochée, de nouveaux messages requièrent votre attention."
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__image_1920
+msgid "Image"
+msgstr "Image"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__image_1024
+msgid "Image 1024"
+msgstr "Image 1024"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__image_128
+msgid "Image 128"
+msgstr "Image 128"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__image_256
+msgid "Image 256"
+msgstr "Image 256"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__image_512
+msgid "Image 512"
+msgstr "Image 512"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__message_is_follower
+msgid "Is Follower"
+msgstr "Est Follower"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_dashboard_email_wizard__write_uid
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__write_uid
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard_create_menu__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_dashboard_email_wizard__write_date
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__write_date
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard_create_menu__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: dashboard_frame
+#. odoo-javascript
+#: code:addons/dashboard_frame/static/src/xml/smartanalytics_dashboard_kanban.xml:0
+msgid "Loading..."
+msgstr "Chargement..."
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__menu_id
+msgid "Menu"
+msgstr "Menu"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard_create_menu__name
+msgid "Menu Name"
+msgstr "Nom du Menu"
+
+#. module: dashboard_frame
+#. odoo-python
+#: code:addons/dashboard_frame/wizards/dashboard_create_menu_wizard.py:0
+msgid "Menu name is required"
+msgstr "Le nom du menu est obligatoire"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_dashboard_email_wizard__body
+msgid "Message Body"
+msgstr "Corps du message"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__message_has_error
+msgid "Message Delivery error"
+msgstr "Erreur d'acheminement du message"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__message_ids
+msgid "Messages"
+msgstr "Messages"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__name
+#: model_terms:ir.ui.view,arch_db:dashboard_frame.smart_analytics_dashboard_settings_form
+msgid "Name"
+msgstr "Nom"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,help:dashboard_frame.field_dashboard_email_wizard__dashboard_name
+msgid "Name of the selected dashboard"
+msgstr "Nom du tableau de bord sélectionné"
+
+#. module: dashboard_frame
+#. odoo-javascript
+#: code:addons/dashboard_frame/static/src/xml/smartanalytics_dashboard_kanban.xml:0
+msgid "Next"
+msgstr "Suivant"
+
+#. module: dashboard_frame
+#. odoo-javascript
+#: code:addons/dashboard_frame/static/src/xml/smartanalytics_dashboard_kanban.xml:0
+msgid "No dashboards found"
+msgstr "Aucun tableau de bord trouvé"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Nombre d'actions"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__message_has_error_counter
+msgid "Number of errors"
+msgstr "Nombre d'erreurs"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,help:dashboard_frame.field_smart_analytics_dashboard__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Nombre de messages nécessitant une action"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,help:dashboard_frame.field_smart_analytics_dashboard__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Nombre de messages avec erreur de livraison"
+
+#. module: dashboard_frame
+#. odoo-javascript
+#: code:addons/dashboard_frame/static/src/xml/smartanalytics_dashboard_kanban.xml:0
+msgid "Pagination"
+msgstr "Pagination"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard_create_menu__parent_menu_id
+msgid "Parent Menu"
+msgstr "Menu parent"
+
+#. module: dashboard_frame
+#. odoo-python
+#: code:addons/dashboard_frame/wizards/dashboard_create_menu_wizard.py:0
+msgid "Parent menu is required"
+msgstr "Le menu des parents est requis"
+
+#. module: dashboard_frame
+#. odoo-javascript
+#: code:addons/dashboard_frame/static/src/xml/smartanalytics_dashboard_kanban.xml:0
+msgid "Previous"
+msgstr "Précédent"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_dashboard_email_wizard__recipient_emails
+msgid "Recipient Emails"
+msgstr "Emails des destinataires"
+
+#. module: dashboard_frame
+#: model_terms:ir.ui.view,arch_db:dashboard_frame.smart_analytics_dashboard_settings_form
+msgid "Remove Menu"
+msgstr "Supprimer le menu"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_dashboard_email_wizard__screenshot
+msgid "Screenshot"
+msgstr "Screenshot"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,help:dashboard_frame.field_dashboard_email_wizard__dashboard_id
+msgid "Select the dashboard to send"
+msgstr "Sélectionnez le tableau de bord à envoyer"
+
+#. module: dashboard_frame
+#: model_terms:ir.ui.view,arch_db:dashboard_frame.view_dashboard_email_wizard_form
+msgid "Send"
+msgstr "Envoyer"
+
+#. module: dashboard_frame
+#: model_terms:ir.ui.view,arch_db:dashboard_frame.view_dashboard_email_wizard_form
+msgid "Send Dashboard Screenshot by Email"
+msgstr "Envoyer une capture d'écran du tableau de bord par courrier électronique"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_smart_analytics_dashboard__sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: dashboard_frame
+#: model:ir.ui.menu,name:dashboard_frame.smart_analytics_settings_menu
+#: model:res.groups,name:dashboard_frame.group_smart_analytics_settings
+msgid "Settings"
+msgstr "Paramètres"
+
+#. module: dashboard_frame
+#. odoo-javascript
+#: code:addons/dashboard_frame/static/src/xml/smartanalytics_dashboard_kanban.xml:0
+#: model:ir.module.category,name:dashboard_frame.module_category_smart_analytics
+#: model:ir.ui.menu,name:dashboard_frame.smart_analytics_root_menu
+msgid "Smart Analytics"
+msgstr "Smart Analytics"
+
+#. module: dashboard_frame
+#: model:ir.model.fields,field_description:dashboard_frame.field_dashboard_email_wizard__subject
+msgid "Subject"
+msgstr "Objet du mail"

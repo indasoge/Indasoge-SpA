@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_dashboard_email_wizard_form" model="ir.ui.view">
+        <field name="name">dashboard.email.wizard.form</field>
+        <field name="model">dashboard.email.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Send Dashboard Screenshot by Email">
+                <group>
+                    <field name="dashboard_id"/>
+                    <field name="dashboard_name"/>
+                    <field name="recipient_emails" widget="email_tags"/>
+                    <field name="subject"/>
+                    <field name="body" widget="html"/>
+                    <field name="screenshot" invisible="1"/>
+                    <field name="screenshot" widget="image" readonly="1"/>
+                </group>
+                <footer>
+                    <button name="action_send_email" string="Send" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

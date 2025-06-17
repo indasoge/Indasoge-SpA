@@ -1,0 +1,107 @@
+<templates xml:space="preserve">
+    <t t-name="SmartanalyticsDashboard">
+        <t t-if="state.dashboards.length">
+            <div class="o_content">
+                <div class="o_kanban_renderer o_renderer d-flex o_kanban_ungrouped align-content-start flex-wrap justify-content-start">
+                    <t t-foreach="state.dashboards" t-as="dashboard" t-key="dashboard.id">
+                        <div role="article" class="o_kanban_record d-flex flex-grow-1 flex-md-shrink-1 flex-shrink-0" tabindex="0">
+                            <div style="width: 100% !important;" class="oe_kanban_global_click" t-on-click="() => this.openDashboardIframe(dashboard.id, dashboard.name)">
+                                <div class="row mb4">
+                                    <div class="col-12">
+                                        <strong>
+                                            <span>
+                                                <span><t t-esc="dashboard.name"/></span>
+                                            </span>
+                                        </strong>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img class="img img-fluid" t-attf-src="#{'/web/image/smart.analytics.dashboard/'+dashboard.id+'/image_1024'}" t-att-alt="dashboard.name"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                    <t t-foreach="[1, 2, 3, 4, 5, 6]" t-as="ghost" t-key="ghost">
+                        <div class="o_kanban_record o_kanban_ghost flex-grow-1 flex-md-shrink-1 flex-shrink-0 my-0"></div>
+                    </t>
+                </div>
+            </div>
+        </t>
+        <t t-else="">
+            <div class="o_view_nocontent">
+                <div class="o_nocontent_help">
+                    <p class="o_view_nocontent_smiling_face">
+                        No dashboards found
+                    </p>
+                    <p>
+                        Create your first dashboard to get started!
+                    </p>
+                </div>
+            </div>
+        </t>
+    </t>
+    <t t-name="SmartanalyticsDashboardIframe">
+        <div class="o_smart_analytics_dashboard_iframe">
+            <div t-if="state.loading" class="o_loading">
+                Loading...
+            </div>
+            <div t-elif="state.error" class="alert alert-danger" role="alert">
+                <t t-esc="state.error"/>
+            </div>
+            <t t-elif="state.dashboard">
+                <nav class="o_main_navbar d-print-none" data-command-category="disabled">
+                    <a href="/odoo" class="o_menu_toggle border-0 hasImage" title="Home menu" aria-label="Home menu" data-hotkey="h">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="o_menu_toggle_icon pe-none" width="14px" height="14px" viewBox="0 0 14 14">
+                            <!-- SVG content -->
+                        </svg>
+                        <img class="o_menu_brand_icon d-inline position-absolute start-0 h-100 ps-1 ms-2" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAAXNSR0IArs4c6QAAAH5QTFRFAAAA27ZJ/7Y9GM+3+LVDmU2A+7lCmk+F/LhEllGB/bpFnFiA+7lGGtK6/LtEl1CE+7lEy4dilk+B+7lGGdS8mFGE/LlF1pBU/LlFlkND+7lF5Z09GtO7F8Kyv24yE62mIpabmFGEp1IrhVKCl0xwB3qKlTskA2yCAF97AF56kkw1hwAAABp0Uk5TAAcVICYoOkdPYWuDh56kur7Fz9Hf3+Tz9f33Y1BmAAACeUlEQVR42u3WbVfbIBTAcaCUJSlSlJWS29otrg/b9/+Cs8ksam6C5MA5bsv/Zan+vHBIJHNzc3OfNCoqpbWqBM1HVAa6nKkyMcIA+DTPYRQW3mRFHiO3wiz0MiwxogBJpjW4AyTLUxpUAlqVEmEa0AxNiHALaJaR0VhRSVkJ9iFEOMDjZDhaaOhySnwEgXiEK/A5xSYjjgUeQj7D0p+JsNFXlxpA0zT0gMC/jBd7T2Tg28HpfY7HPSDYlP2ScYO78VGYwu975BGq0TkQY+x9whygGRZrGBF9rSyPM5ziE+4uD7+vjNQO2pwuiC/BJBK6dttVWa7ut8/dr8q2JcHjEHkmlYO2w9OxeV85eN9Dk+DG7uyNIEIU4NlizABkjhFEwEBO0v5r58VwmyYGoRqGMvy2qYzR13NYsUaRyFep3zLKpbHPafnKIJEIqWAwV1GhHPzptleChBH8NH1W+Q8MOl8ICf/zbIT/AJ2OTEIIk/ZGSEYI4XrEiEU8U0htjJYFI21UugGExyKBPURTKRHCzcAoiRD/xNn1ApkSYRYO5347Q1MibnfGEMsSIhwOKOISIpTDU3aEeCTjdjHrkWwHTzSOKJISqXCkSIqwGkO2dAqyXG96dV9/wJCSTECWDdKqQ5BR6i9TkPUIcqx7RjMJ2YwgTVO/M44ZkLdKXTdNDuTK1C/EscmCdB2vXYVciG9GZuQzIovF5gfSanHtAVsq26U1vkRRZL+//Or38/v+2glb+ja2dBdGfB1yGUOQpiD4b8qA5J/k8s9Mku9M/J+LLz0OI49RyGnfdopdGkROl17dZmFLJ7+E/NQgkrD/APmatjsyNzc391f3G6U06pNoBYiqAAAAAElFTkSuQmCC" alt="Smart Analytics"/>
+                        <span class="o_menu_brand d-flex ms-3 pe-0">Smart Analytics</span>
+                    </a>
+                    <div class="o_menu_sections d-flex flex-grow-1 flex-shrink-1" role="menu">
+                        <a class="o-dropdown-item dropdown-item o-navigable o_nav_entry" role="menuitem" tabindex="0" href="#" data-hotkey="1" t-on-click="returnToKanban">
+                            Dashboards
+                        </a>
+                        <a class="o-dropdown-item dropdown-item o-navigable o_nav_entry" role="menuitem" tabindex="0" href="#" data-hotkey="1" t-on-click="openDashboardSettings">
+                            Settings
+                        </a>
+                        <a href="#" class="btn btn-primary o_capture" t-on-click="captureAndSendScreenshot">
+                            Capture
+                        </a>
+                    </div>
+                    <div class="o_menu_systray d-flex flex-shrink-0 ms-auto" role="menu">
+                        <div class="o_cp_pager" role="search">
+                            <nav class="o_pager d-flex align-items-center" aria-label="Pager">
+                                <span class="o_pager_counter">
+                                    <span class="o_pager_value">
+                                        <t t-esc="state.currentIndex + 1"/>
+                                    </span>
+                                    <span> / </span>
+                                    <span class="o_pager_limit">
+                                        <t t-esc="state.dashboards.length"/>
+                                    </span>
+                                </span>
+                                <span class="btn-group ms-2">
+                                    <button type="button" class="btn btn-secondary o_pager_previous"
+                                            t-on-click="previousDashboard"
+                                            t-att-disabled="state.currentIndex === 0">
+                                        <i class="fa fa-chevron-left"/>
+                                    </button>
+                                    <button type="button" class="btn btn-secondary o_pager_next"
+                                            t-on-click="nextDashboard"
+                                            t-att-disabled="state.currentIndex === state.dashboards.length - 1">
+                                        <i class="fa fa-chevron-right"/>
+                                    </button>
+                                </span>
+                            </nav>
+                        </div>
+                    </div>
+                </nav>
+                <div class="o_iframe_container">
+                    <iframe t-att-src="state.dashboard.url" width="100%" height="100%" frameborder="0"/>
+                </div>
+            </t>
+        </div>
+    </t>
+</templates>

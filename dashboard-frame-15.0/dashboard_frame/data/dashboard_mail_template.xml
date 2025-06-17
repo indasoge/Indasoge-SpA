@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="dashboard_screenshot_email_template" model="mail.template">
+            <field name="name">Dashboard Screenshot Email</field>
+            <field name="model_id" ref="model_dashboard_email_wizard"/>
+            <field name="subject">${object.subject}</field>
+            <field name="email_from">${user.email_formatted}</field>
+            <field name="email_to">${','.join(map(lambda x: x.email_formatted, object.recipient_ids))}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif;">
+                    <h2 style="color: #1f497d;">Dashboard Screenshot: ${object.dashboard_name}</h2>
+                    <p>Dear Recipient,</p>
+                    <p>${object.body | safe}</p>
+                    <p style="margin-top: 20px;">
+                        You can find the dashboard screenshot attached to this email.
+                    </p>
+                    <div style="margin-top: 20px;">
+                        <p>Best regards,</p>
+                        <p>${user.name}</p>
+                    </div>
+                    <div style="margin-top: 20px; font-size: 12px; color: #888888;">
+                        <p>This email was sent from ${user.company_id.name}.</p>
+                        <p>If you have any questions, please contact us at ${user.company_id.email}.</p>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>
