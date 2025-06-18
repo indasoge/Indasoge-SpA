@@ -1,0 +1,36 @@
+.git/
+.hg/
+*.pyc
+pyvenv.cfg
+
+# For buildout
+.installed.cfg
+bin/
+buildout.cfg
+develop-eggs/
+develop-src/
+downloads/
+eggs/
+etc/
+odoo.egg-info
+parts/
+parts/*
+parts/odoo/addons-enterprise/
+include/
+/lib/
+py36/
+share/
+/upgrade.py
+/pip-selfcheck.json
+.idea/
+__pycache__/
+.DS_Store
+
+# For buildout development
+a.r.odoo/
+setuptools-*.zip
+# project specific
+
+# pyenv
+.python-version
+/venv/
