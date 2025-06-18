@@ -7,7 +7,7 @@
 
 {
     'name': 'Google Analytics 4 Global Site Tag (gtag.js)',
-    'version': '17.0.1.1.0',
+    'version': '18.0.1.1.0',
     'category': 'Website',
     'author': 'Garazd Creation',
     'website': 'https://garazd.biz/shop',
