@@ -3,11 +3,11 @@
         <field name="name">smart.analytics.dashboard.settings.tree</field>
         <field name="model">smart.analytics.dashboard</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="url"/>
-            </tree>
+            </list>
         </field>
     </record>
     <record id="smart_analytics_dashboard_settings_form" model="ir.ui.view">
@@ -45,12 +45,12 @@
         <field name="name">smart.analytics.dashboard.iframe.tree</field>
         <field name="model">smart.analytics.dashboard</field>
         <field name="arch" type="xml">
-            <tree create="0" delete="0">
+            <list create="0" delete="0">
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="url"/>
                 <field name="company_id"/>
-            </tree>
+            </list>
         </field>
     </record>
 
