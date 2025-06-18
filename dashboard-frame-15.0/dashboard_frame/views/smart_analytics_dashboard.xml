@@ -74,8 +74,8 @@
     <record id="smart_analytics_dashboard_settings_action" model="ir.actions.act_window">
         <field name="name">Dashboard Settings</field>
         <field name="res_model">smart.analytics.dashboard</field>
-        <field name="view_mode">tree,form</field>
-        <field name="view_ids" eval="[ (5, 0, 0), (0, 0, {'view_mode': 'tree', 'view_id': ref('dashboard_frame.smart_analytics_dashboard_settings_tree')}), (0, 0, {'view_mode': 'form', 'view_id': ref('dashboard_frame.smart_analytics_dashboard_settings_form')}) ]"/>
+        <field name="view_mode">list,form</field>
+        <field name="view_ids" eval="[ (5, 0, 0), (0, 0, {'view_mode': 'list', 'view_id': ref('dashboard_frame.smart_analytics_dashboard_settings_tree')}), (0, 0, {'view_mode': 'form', 'view_id': ref('dashboard_frame.smart_analytics_dashboard_settings_form')}) ]"/>
     </record>
     <menuitem id="smart_analytics_dashboard_settings_menu" parent="smart_analytics_settings_menu" action="smart_analytics_dashboard_settings_action" groups="dashboard_frame.group_smart_analytics_settings"  />
 </odoo>
