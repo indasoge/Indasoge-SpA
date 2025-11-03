@@ -1,6 +1,6 @@
 {
     "name": "Smart analytics - Dashboard Frame",
-    'version': '18.0.0.0',
+    'version': '19.0.0.0',
     'category': 'Reporting',
     "summary": "Dashboards for Smart Analytics",
     'description': """
