@@ -3,6 +3,9 @@ from odoo.exceptions import UserError
 from dateutil.relativedelta import relativedelta
 from datetime import date
 from markupsafe import Markup
+import logging
+
+_logger = logging.getLogger(__name__)
 
 class L10nClDteCaf(models.Model):
     """
@@ -147,11 +150,17 @@ class L10nClDteCaf(models.Model):
                 boton_html = f'<br/><br/><a href="{url_documento}" style="background-color: #875A7B; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">Ver Registro en Odoo</a>'
                 cuerpo_correo = mensaje_seguro + Markup(boton_html)
 
-                # 3. Envío de correo electrónico a los responsables
-                mail_values = {
-                    'subject': f'Alerta Odoo: CAF {tipo_documento} requiere atención',
-                    'body_html': cuerpo_correo,
-                    'email_to': 'leoneelondono39@gmail.com',
-                    'email_from': self.env.user.company_id.email or 'admin@odoo.local',
-                }
-                self.env['mail.mail'].sudo().create(mail_values).send()
+                # 3. Envío de correo electrónico a la dirección configurada en la Compañía
+                email_destino = caf.company_id.email
+                
+                if email_destino:
+                    mail_values = {
+                        'subject': f'Alerta Odoo: CAF {tipo_documento} requiere atención',
+                        'body_html': cuerpo_correo,
+                        'email_to': email_destino,  # Obtenido dinámicamente de la empresa
+                        'email_from': self.env.user.company_id.email or 'admin@odoo.local',
+                    }
+                    self.env['mail.mail'].sudo().create(mail_values).send()
+                else:
+                    # Registramos una advertencia en los logs del servidor si la empresa no tiene correo
+                    _logger.warning(f"No se pudo enviar la alerta de CAF por correo. La empresa '{caf.company_id.name}' no tiene un email configurado.")
