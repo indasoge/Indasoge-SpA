@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_dte_caf_form_inherit_verificador" model="ir.ui.view">
+        <field name="name">l10n_cl.dte.caf.form.inherit.verificador</field>
+        <field name="model">l10n_cl.dte.caf</field>
+        <field name="inherit_id" ref="l10n_cl_edi.view_dte_caf_form"/>
+        <field name="arch" type="xml">
+            
+            <xpath expr="//header" position="inside">
+                <button name="action_verificar_libres" 
+                        string="Verificar Libres" 
+                        type="object" 
+                        class="oe_highlight"
+                        invisible="status == 'spent'"
+                        groups="account.group_account_user"/>
+            </xpath>
+
+            <xpath expr="//sheet" position="after">
+                <chatter/>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>
