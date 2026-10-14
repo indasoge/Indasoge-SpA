@@ -115,4 +115,4 @@ registry.category("ir.actions.report handlers").add("open_print_dialog_handler",
     } else if (action.report_type === "qweb-text") {
         return _openPrintDialog(action, options, env, "text");
     }
-});
+}, { sequence: 10 });
