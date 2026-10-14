@@ -1,6 +1,7 @@
 /** @odoo-module **/
 import { registry } from "@web/core/registry";
 import { _t } from "@web/core/l10n/translation";
+import { rpc } from "@web/core/network/rpc";
 
 /**
  * Generates the report url given a report action.
@@ -12,7 +13,7 @@ import { _t } from "@web/core/l10n/translation";
  */
 function _getReportUrl(action, type, env) {
     let url = `/report/${type}/${action.report_name}`;
-    const contextDict = Object.assign({} ,action.context, env.services.user.context);
+    const contextDict = Object.assign({}, action.context, env.services.user.context);
     if (action.data && JSON.stringify(action.data) !== "{}") {
         // build a query string with `action.data` (it's the place where reports
         // using a wizard to customize the output traditionally put their options)
@@ -64,7 +65,7 @@ registry.category("ir.actions.report handlers").add("open_print_dialog_handler",
         is_open_browser_dialog = true
     }
     else {
-        is_open_browser_dialog = await env.services.rpc("/report/is_open_print_dialog", {report_ref: (action.id) ? action.id : action.report_name});
+        is_open_browser_dialog = await rpc("/report/is_open_print_dialog", { report_ref: (action.id) ? action.id : action.report_name });
     }
     if (!is_open_browser_dialog)
         return Promise.resolve(false);
@@ -72,7 +73,7 @@ registry.category("ir.actions.report handlers").add("open_print_dialog_handler",
     if (action.report_type === "qweb-pdf") {
         // check the state of wkhtmltopdf before proceeding
         if (!wkhtmltopdfStateProm) {
-            wkhtmltopdfStateProm = env.services.rpc("/report/check_wkhtmltopdf");
+            wkhtmltopdfStateProm = rpc("/report/check_wkhtmltopdf");
         }
         const state = await wkhtmltopdfStateProm;
         // display a notification according to wkhtmltopdf's state
@@ -81,7 +82,7 @@ registry.category("ir.actions.report handlers").add("open_print_dialog_handler",
             broken:
                 _t(
                     "Your installation of Wkhtmltopdf seems to be broken. The report will be shown " +
-                        "in html."
+                    "in html."
                 ) + link,
             install:
                 _t(
@@ -90,14 +91,14 @@ registry.category("ir.actions.report handlers").add("open_print_dialog_handler",
             upgrade:
                 _t(
                     "You should upgrade your version of Wkhtmltopdf to at least 0.12.0 in order to " +
-                        "get a correct display of headers and footers as well as support for " +
-                        "table-breaking between pages."
+                    "get a correct display of headers and footers as well as support for " +
+                    "table-breaking between pages."
                 ) + link,
             workers: _t(
                 "You need to start Odoo with at least two workers to print a pdf version of " +
-                    "the reports."
+                "the reports."
             ),
-        };        
+        };
         if (state in WKHTMLTOPDF_MESSAGES) {
             env.services.notification.add(WKHTMLTOPDF_MESSAGES[state], {
                 sticky: true,
