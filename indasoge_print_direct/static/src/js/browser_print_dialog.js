@@ -2,6 +2,7 @@
 import { registry } from "@web/core/registry";
 import { _t } from "@web/core/l10n/translation";
 import { rpc } from "@web/core/network/rpc";
+import { user } from "@web/core/user";
 
 /**
  * Generates the report url given a report action.
@@ -13,7 +14,7 @@ import { rpc } from "@web/core/network/rpc";
  */
 function _getReportUrl(action, type, env) {
     let url = `/report/${type}/${action.report_name}`;
-    const contextDict = Object.assign({}, action.context, env.services.user.context);
+    const contextDict = Object.assign({}, action.context, user.context);
     if (action.data && JSON.stringify(action.data) !== "{}") {
         // build a query string with `action.data` (it's the place where reports
         // using a wizard to customize the output traditionally put their options)
