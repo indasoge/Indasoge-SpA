@@ -2,7 +2,7 @@ from odoo import http
 from odoo.addons.web.controllers.report import ReportController, request
 
 
-class DirectPrintReportController(ReportController):
+class ReportController(ReportController):
 
     @http.route(['/report/is_open_print_dialog'], type='jsonrpc', auth="user")
     def is_open_print_dialog(self, report_ref):
