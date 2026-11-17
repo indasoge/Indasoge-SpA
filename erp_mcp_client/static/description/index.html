@@ -1,0 +1,515 @@
+<!--
+  MCP Connector for Odoo - Odoo Apps Store description page (ERP SWISS style).
+  Constraints honored: Bootstrap 5 classes + inline styles ONLY.
+  No <style> blocks, no <script>, no external CSS/JS.
+  Screenshots live in ./images/ (relative to this index.html).
+  Responsiveness: Bootstrap grid (mobile/tablet/desktop) + CSS clamp() for fluid
+  scaling on 4K/5K+ monitors. Inline styles cannot hold @media queries, so all
+  fluid sizing is done with clamp(min, vw, max) and min()/max().
+  Palette: red #D0342C, ink #111111, paper #FBFAF7. Square corners, hairline borders.
+  The Bootstrap CDN <link> only powers standalone preview; the Odoo store
+  already loads Bootstrap, so it is safe to keep or remove.
+-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<div style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; color:#111111; line-height:1.55; overflow-x:hidden;">
+
+  <!-- ============================================================ HERO -->
+  <section class="py-5" style="background-color:#fff">
+    <div class="mx-auto px-3 py-lg-4" style="max-width:min(2160px,94vw)">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <p class="mb-3" style="font-size:clamp(.72rem,.8vw,.9rem); font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:#D0342C;">Free module &nbsp;&middot;&nbsp; ~5 min setup &nbsp;&middot;&nbsp; Any MCP client</p>
+          <h1 class="fw-bold mb-3" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; color:#111111; font-size:clamp(2.2rem,4.4vw,4rem); line-height:1.05; font-weight:800; letter-spacing:-.03em;">Connect your Odoo to Claude, ChatGPT &amp; any&nbsp;AI</h1>
+          <p class="mb-0" style="font-size:clamp(1rem,1.25vw,1.3rem); line-height:1.6; color:#555555; max-width:46rem;"><strong style="color:#111111;">MCP Connector</strong> links any AI client that supports the Model Context Protocol directly to your Odoo. Configure it once, share a single link &mdash; <strong style="color:#111111;">no shared passwords, no per-user setup</strong>. Access is controlled by role and Google email.</p>
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <span class="d-inline-flex align-items-center px-3 py-2" style="border:1px solid #111111; font-weight:600; font-size:clamp(.85rem,.95vw,1rem); color:#111111;">Claude</span>
+            <span class="d-inline-flex align-items-center px-3 py-2" style="border:1px solid #111111; font-weight:600; font-size:clamp(.85rem,.95vw,1rem); color:#111111;">ChatGPT</span>
+            <span class="d-inline-flex align-items-center px-3 py-2" style="border:1px solid #111111; font-weight:600; font-size:clamp(.85rem,.95vw,1rem); color:#111111;">Gemini</span>
+            <span class="d-inline-flex align-items-center px-3 py-2" style="border:1px solid #111111; font-weight:600; font-size:clamp(.85rem,.95vw,1rem); color:#111111;">Cursor</span>
+            <span class="d-inline-flex align-items-center px-3 py-2" style="border:1px solid #111111; font-weight:600; font-size:clamp(.85rem,.95vw,1rem); color:#111111;">Copilot</span>
+            <span class="d-inline-flex align-items-center px-3 py-2" style="border:1px solid #111111; font-weight:600; font-size:clamp(.85rem,.95vw,1rem); color:#111111;">Any MCP client</span>
+          </div>
+          <p class="mt-4 mb-0" style="font-size:clamp(.72rem,.8vw,.9rem); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:#555555;">Community &amp; Enterprise &nbsp;&middot;&nbsp; Odoo 19 &middot; 20</p>
+        </div>
+        <div class="col-lg-6">
+          <img src="images/mcp-chat-demo.gif" alt="Live demo: asking an AI client a question and getting the answer straight from Odoo" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ HOW IT CONNECTS -->
+  <section class="py-5" style="background-color:#FBFAF7">
+    <div class="mx-auto px-3 py-lg-4" style="max-width:min(2160px,94vw)">
+      <div class="row g-3">
+        <div class="col-12 col-md-4"><div class="h-100 p-4 text-center" style="background-color:#fff; border:1px solid #E7E3DC;">
+          <div class="fw-bold" style="font-size:clamp(1.1rem,1.4vw,1.5rem); color:#111111;">AI client</div>
+          <div style="font-size:clamp(.85rem,.95vw,1rem); color:#555555;">Claude &middot; ChatGPT &middot; &hellip;</div>
+        </div></div>
+        <div class="col-12 col-md-4"><div class="h-100 p-4 text-center" style="background-color:#D0342C; border:1px solid #D0342C;">
+          <div class="fw-bold" style="font-size:clamp(1.1rem,1.4vw,1.5rem); color:#fff;">MCP Connector</div>
+          <div style="font-size:clamp(.85rem,.95vw,1rem); color:#fff;">secure bridge</div>
+        </div></div>
+        <div class="col-12 col-md-4"><div class="h-100 p-4 text-center" style="background-color:#fff; border:1px solid #E7E3DC;">
+          <div class="fw-bold" style="font-size:clamp(1.1rem,1.4vw,1.5rem); color:#111111;">Your Odoo</div>
+          <div style="font-size:clamp(.85rem,.95vw,1rem); color:#555555;">Community &middot; Enterprise</div>
+        </div></div>
+      </div>
+      <p class="text-center mt-4 mb-5" style="font-size:clamp(.72rem,.8vw,.9rem); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:#555555;">Google OAuth sign-in &nbsp;&middot;&nbsp; Role-based API keys &nbsp;&middot;&nbsp; Live two-way link</p>
+      <div class="row g-4">
+        <div class="col-12 col-sm-4 text-center"><div class="fw-bold" style="font-size:clamp(2rem,3.2vw,3.4rem); line-height:1; letter-spacing:-.03em; color:#D0342C;">~5 min</div><div class="mt-2" style="font-size:clamp(.85rem,.95vw,1rem); font-weight:600; color:#555555;">One-time setup</div></div>
+        <div class="col-12 col-sm-4 text-center"><div class="fw-bold" style="font-size:clamp(2rem,3.2vw,3.4rem); line-height:1; letter-spacing:-.03em; color:#D0342C;">Any AI</div><div class="mt-2" style="font-size:clamp(.85rem,.95vw,1rem); font-weight:600; color:#555555;">MCP-compatible client</div></div>
+        <div class="col-12 col-sm-4 text-center"><div class="fw-bold" style="font-size:clamp(2rem,3.2vw,3.4rem); line-height:1; letter-spacing:-.03em; color:#D0342C;">Free</div><div class="mt-2" style="font-size:clamp(.85rem,.95vw,1rem); font-weight:600; color:#555555;">Module + first month, then &euro;8 / user / month</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ WHAT YOU CAN DO -->
+  <section class="py-5" style="background-color:#fff">
+    <div class="mx-auto px-3 py-lg-4" style="max-width:min(2160px,94vw)">
+      <p class="mb-3" style="font-size:clamp(.72rem,.8vw,.9rem); font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:#D0342C;">What your team can do</p>
+      <h2 class="fw-bold mb-3" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1.7rem,3vw,3rem); line-height:1.1; font-weight:800; letter-spacing:-.02em; color:#111111;">Run your ERP in plain language</h2>
+      <div class="mb-5"><p class="mb-0" style="font-size:clamp(1rem,1.25vw,1.3rem); line-height:1.6; color:#555555; max-width:46rem;">Anyone on your team just asks their AI assistant &mdash; it works directly in Odoo, within their own permissions.</p></div>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3"><div class="h-100 p-4" style="background-color:#fff; border:1px solid #E7E3DC;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Instant analytics</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">&ldquo;Show revenue by salesperson this quarter and flag anyone below target.&rdquo;</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-3"><div class="h-100 p-4" style="background-color:#fff; border:1px solid #E7E3DC;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Create quotations</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">&ldquo;Draft a quote for ACME: 10&times; Product A, 5&times; Product B, 15% discount.&rdquo;</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-3"><div class="h-100 p-4" style="background-color:#fff; border:1px solid #E7E3DC;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Client follow-ups</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">&ldquo;List customers with no activity in 30 days and log a follow-up task.&rdquo;</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-3"><div class="h-100 p-4" style="background-color:#fff; border:1px solid #E7E3DC;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Stock &amp; expiry</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">&ldquo;Which lots expire within 30 days, how many units, and where?&rdquo;</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ FOR ADMINISTRATORS -->
+  <section class="py-5" style="background-color:#FBFAF7">
+    <div class="mx-auto px-3 py-lg-4" style="max-width:min(2160px,94vw)">
+      <p class="mb-3" style="font-size:clamp(.72rem,.8vw,.9rem); font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:#D0342C;">For administrators</p>
+      <h2 class="fw-bold mb-3" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1.7rem,3vw,3rem); line-height:1.1; font-weight:800; letter-spacing:-.02em; color:#111111;">Orchestrate access by role &amp; email</h2>
+      <div class="mb-5"><p class="mb-0" style="font-size:clamp(1rem,1.25vw,1.3rem); line-height:1.6; color:#555555; max-width:46rem;">Define roles, map each one to Google emails. Whoever signs in gets exactly the permissions of the matching Odoo user &mdash; nothing more. Add or remove people by editing a list, never by handing out credentials.</p></div>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3"><div class="h-100 p-4" style="background-color:#fff; border:1px solid #E7E3DC;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">One link for everyone</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Share a single connector URL. Nothing to install on the user side.</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-3"><div class="h-100 p-4" style="background-color:#fff; border:1px solid #E7E3DC;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Google OAuth sign-in</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Users authenticate with Google. Only listed emails get through.</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-3"><div class="h-100 p-4" style="background-color:#fff; border:1px solid #E7E3DC;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Per-role permissions</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Each role uses its own Odoo user and rights &mdash; read-only, sales, admin.</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-3"><div class="h-100 p-4" style="background-color:#fff; border:1px solid #E7E3DC;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Any device</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Desktop, web and mobile AI apps &mdash; same secure connector.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ SETUP OVERVIEW -->
+  <section class="py-5" style="background-color:#fff">
+    <div class="mx-auto px-3 py-lg-4" style="max-width:min(2160px,94vw)">
+      <p class="mb-3" style="font-size:clamp(.72rem,.8vw,.9rem); font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:#D0342C;">Step-by-step setup</p>
+      <h2 class="fw-bold mb-3" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1.7rem,3vw,3rem); line-height:1.1; font-weight:800; letter-spacing:-.02em; color:#111111;">Six processes, about five minutes</h2>
+      <div class="mb-5"><p class="mb-0" style="font-size:clamp(1rem,1.25vw,1.3rem); line-height:1.6; color:#555555; max-width:46rem;">Follow them in order. Every step has the exact screenshot from the real interface.</p></div>
+      <div class="row g-3">
+        <div class="col-12 col-sm-6 col-lg-4"><a href="#process-1" class="d-block h-100 p-4 text-decoration-none" style="background-color:#fff; border:1px solid #E7E3DC; color:#111111;">
+          <span class="d-block" style="font-size:clamp(.7rem,.78vw,.85rem); font-weight:800; letter-spacing:.16em; color:#D0342C;">PROCESS 1 &middot; ~1 MIN</span>
+          <span class="d-block mt-2 fw-bold" style="font-size:clamp(1rem,1.15vw,1.3rem); line-height:1.3;">Install the free module</span>
+          <span class="d-block mt-1" style="font-size:clamp(.85rem,.95vw,1rem); color:#555555;">In Odoo</span>
+        </a></div>
+        <div class="col-12 col-sm-6 col-lg-4"><a href="#process-2" class="d-block h-100 p-4 text-decoration-none" style="background-color:#fff; border:1px solid #E7E3DC; color:#111111;">
+          <span class="d-block" style="font-size:clamp(.7rem,.78vw,.85rem); font-weight:800; letter-spacing:.16em; color:#D0342C;">PROCESS 2 &middot; ~2 MIN</span>
+          <span class="d-block mt-2 fw-bold" style="font-size:clamp(1rem,1.15vw,1.3rem); line-height:1.3;">Create Google OAuth credentials</span>
+          <span class="d-block mt-1" style="font-size:clamp(.85rem,.95vw,1rem); color:#555555;">Google Cloud Console</span>
+        </a></div>
+        <div class="col-12 col-sm-6 col-lg-4"><a href="#process-3" class="d-block h-100 p-4 text-decoration-none" style="background-color:#fff; border:1px solid #E7E3DC; color:#111111;">
+          <span class="d-block" style="font-size:clamp(.7rem,.78vw,.85rem); font-weight:800; letter-spacing:.16em; color:#D0342C;">PROCESS 3 &middot; ~1 MIN PER ROLE</span>
+          <span class="d-block mt-2 fw-bold" style="font-size:clamp(1rem,1.15vw,1.3rem); line-height:1.3;">Generate an Odoo API key</span>
+          <span class="d-block mt-1" style="font-size:clamp(.85rem,.95vw,1rem); color:#555555;">In Odoo</span>
+        </a></div>
+        <div class="col-12 col-sm-6 col-lg-4"><a href="#process-4" class="d-block h-100 p-4 text-decoration-none" style="background-color:#fff; border:1px solid #E7E3DC; color:#111111;">
+          <span class="d-block" style="font-size:clamp(.7rem,.78vw,.85rem); font-weight:800; letter-spacing:.16em; color:#D0342C;">PROCESS 4 &middot; ~1 MIN</span>
+          <span class="d-block mt-2 fw-bold" style="font-size:clamp(1rem,1.15vw,1.3rem); line-height:1.3;">Configure &amp; register the connector</span>
+          <span class="d-block mt-1" style="font-size:clamp(.85rem,.95vw,1rem); color:#555555;">In Odoo</span>
+        </a></div>
+        <div class="col-12 col-sm-6 col-lg-4"><a href="#process-5" class="d-block h-100 p-4 text-decoration-none" style="background-color:#fff; border:1px solid #E7E3DC; color:#111111;">
+          <span class="d-block" style="font-size:clamp(.7rem,.78vw,.85rem); font-weight:800; letter-spacing:.16em; color:#D0342C;">PROCESS 5 &middot; ~1 MIN</span>
+          <span class="d-block mt-2 fw-bold" style="font-size:clamp(1rem,1.15vw,1.3rem); line-height:1.3;">Authorize the URLs in Google</span>
+          <span class="d-block mt-1" style="font-size:clamp(.85rem,.95vw,1rem); color:#555555;">Odoo + Google Console</span>
+        </a></div>
+        <div class="col-12 col-sm-6 col-lg-4"><a href="#process-6" class="d-block h-100 p-4 text-decoration-none" style="background-color:#fff; border:1px solid #E7E3DC; color:#111111;">
+          <span class="d-block" style="font-size:clamp(.7rem,.78vw,.85rem); font-weight:800; letter-spacing:.16em; color:#D0342C;">PROCESS 6 &middot; ~1 MIN</span>
+          <span class="d-block mt-2 fw-bold" style="font-size:clamp(1rem,1.15vw,1.3rem); line-height:1.3;">Connect your AI client &amp; sign in</span>
+          <span class="d-block mt-1" style="font-size:clamp(.85rem,.95vw,1rem); color:#555555;">In your AI client</span>
+        </a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ PROCESS 1 -->
+  <section id="process-1" class="py-5" style="background-color:#FBFAF7">
+    <div class="mx-auto px-3 py-lg-4" style="max-width:min(2160px,94vw)">
+      <div class="d-flex flex-wrap gap-2 mb-3">
+        <span class="px-3 py-2" style="background-color:#D0342C; color:#fff; font-size:clamp(.7rem,.78vw,.85rem); font-weight:800; letter-spacing:.16em;">PROCESS 1</span>
+        <span class="px-3 py-2" style="border:1px solid #111111; color:#111111; font-size:clamp(.7rem,.78vw,.85rem); font-weight:700; letter-spacing:.12em; text-transform:uppercase;">In Odoo</span>
+        <span class="px-3 py-2" style="border:1px solid #E7E3DC; color:#555555; font-size:clamp(.7rem,.78vw,.85rem); font-weight:700; letter-spacing:.12em; text-transform:uppercase;">~1 min</span>
+      </div>
+      <h2 class="fw-bold mb-3" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1.7rem,3vw,3rem); line-height:1.1; font-weight:800; letter-spacing:-.02em; color:#111111;">Install the free module</h2>
+      <div class="mb-4"><p class="mb-0" style="font-size:clamp(1rem,1.25vw,1.3rem); line-height:1.6; color:#555555; max-width:46rem;">Add <strong style="color:#111111;">MCP Connector</strong> to the Odoo database you want to expose, then open it to create your first connection.</p></div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">1</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Install &amp; activate</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Go to <strong style="color:#111111;">Apps</strong>, find <strong style="color:#111111;">MCP Connector</strong> and install it.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/config-1.jpg" alt="Install and activate" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">2</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Create a new connection</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Open <strong style="color:#111111;">MCP Connector &rarr; Connectors</strong> and click <strong style="color:#111111;">New</strong>.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/config-2.jpg" alt="Create a new connection" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ PROCESS 2 -->
+  <section id="process-2" class="py-5" style="background-color:#fff">
+    <div class="mx-auto px-3 py-lg-4" style="max-width:min(2160px,94vw)">
+      <div class="d-flex flex-wrap gap-2 mb-3">
+        <span class="px-3 py-2" style="background-color:#D0342C; color:#fff; font-size:clamp(.7rem,.78vw,.85rem); font-weight:800; letter-spacing:.16em;">PROCESS 2</span>
+        <span class="px-3 py-2" style="border:1px solid #111111; color:#111111; font-size:clamp(.7rem,.78vw,.85rem); font-weight:700; letter-spacing:.12em; text-transform:uppercase;">Google Cloud Console</span>
+        <span class="px-3 py-2" style="border:1px solid #E7E3DC; color:#555555; font-size:clamp(.7rem,.78vw,.85rem); font-weight:700; letter-spacing:.12em; text-transform:uppercase;">~2 min</span>
+      </div>
+      <h2 class="fw-bold mb-3" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1.7rem,3vw,3rem); line-height:1.1; font-weight:800; letter-spacing:-.02em; color:#111111;">Create Google OAuth credentials</h2>
+      <div class="mb-4"><p class="mb-0" style="font-size:clamp(1rem,1.25vw,1.3rem); line-height:1.6; color:#555555; max-width:46rem;">The connector signs your users in with Google. Create an OAuth client at <strong style="color:#111111;">console.cloud.google.com</strong> and copy its Client ID &amp; Secret. Redirect URLs come later, in Process 5.</p></div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">1</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Open APIs &amp; Services</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">In Google Cloud console, open <strong style="color:#111111;">APIs &amp; Services</strong> from Quick access.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/google-1.jpg" alt="Open APIs and Services" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">2</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Go to Credentials</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">In the left menu, select <strong style="color:#111111;">Credentials</strong>.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/google-2.jpg" alt="Go to Credentials" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">3</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Create credentials</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Click <strong style="color:#111111;">+ Create credentials</strong> at the top.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/google-3.jpg" alt="Create credentials" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">4</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Choose OAuth client ID</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Select <strong style="color:#111111;">OAuth client ID</strong> from the dropdown.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/google-4.jpg" alt="Choose OAuth client ID" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">5</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Application type</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Set <strong style="color:#111111;">Application type</strong> to <strong style="color:#111111;">Web application</strong>.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/google-5.jpg" alt="Application type" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">6</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Name it &amp; create</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Any name works (e.g. &ldquo;Odoo MCP Connector&rdquo;). Leave URIs empty for now and click <strong style="color:#111111;">Create</strong>.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/google-6.jpg" alt="Name it and create" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">7</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Copy Client ID &amp; Secret</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Paste both into the matching fields of the module. The secret is shown only once &mdash; store it safely.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/google-7.jpg" alt="Copy Client ID and Secret" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ PROCESS 3 -->
+  <section id="process-3" class="py-5" style="background-color:#FBFAF7">
+    <div class="mx-auto px-3 py-lg-4" style="max-width:min(2160px,94vw)">
+      <div class="d-flex flex-wrap gap-2 mb-3">
+        <span class="px-3 py-2" style="background-color:#D0342C; color:#fff; font-size:clamp(.7rem,.78vw,.85rem); font-weight:800; letter-spacing:.16em;">PROCESS 3</span>
+        <span class="px-3 py-2" style="border:1px solid #111111; color:#111111; font-size:clamp(.7rem,.78vw,.85rem); font-weight:700; letter-spacing:.12em; text-transform:uppercase;">In Odoo</span>
+        <span class="px-3 py-2" style="border:1px solid #E7E3DC; color:#555555; font-size:clamp(.7rem,.78vw,.85rem); font-weight:700; letter-spacing:.12em; text-transform:uppercase;">~1 min per role</span>
+      </div>
+      <h2 class="fw-bold mb-3" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1.7rem,3vw,3rem); line-height:1.1; font-weight:800; letter-spacing:-.02em; color:#111111;">Generate an Odoo API key</h2>
+      <div class="mb-4"><p class="mb-0" style="font-size:clamp(1rem,1.25vw,1.3rem); line-height:1.6; color:#555555; max-width:46rem;">Each role connects with its own API key, generated by the Odoo user that role represents. Repeat for every role &mdash; admin, sales, read-only&hellip;</p></div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">1</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Open My Preferences</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Click your avatar (top-right) &rarr; <strong style="color:#111111;">My Preferences</strong>.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/apikey-1.jpg" alt="Open My Preferences" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">2</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Security &rarr; Add API Key</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Open the <strong style="color:#111111;">Security</strong> tab and click <strong style="color:#111111;">Add API Key</strong>.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/apikey-2.jpg" alt="Security &rarr; Add API Key" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">3</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Confirm your password</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">The user creating the key confirms with their Odoo password.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/apikey-3.jpg" alt="Confirm your password" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">4</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Name it &amp; set validity</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Give it a clear name. A <strong style="color:#111111;">Persistent Key</strong> is recommended so the connection never expires.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/apikey-4.jpg" alt="Name it and set validity" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">5</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Generate the key</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Click <strong style="color:#111111;">Generate key</strong>.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/apikey-5.jpg" alt="Generate the key" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">6</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Copy it into the module</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Paste it into the <strong style="color:#111111;">Odoo API Key</strong> field of the matching role. It is shown only once.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/apikey-6.jpg" alt="Copy it into the module" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ PROCESS 4 -->
+  <section id="process-4" class="py-5" style="background-color:#fff">
+    <div class="mx-auto px-3 py-lg-4" style="max-width:min(2160px,94vw)">
+      <div class="d-flex flex-wrap gap-2 mb-3">
+        <span class="px-3 py-2" style="background-color:#D0342C; color:#fff; font-size:clamp(.7rem,.78vw,.85rem); font-weight:800; letter-spacing:.16em;">PROCESS 4</span>
+        <span class="px-3 py-2" style="border:1px solid #111111; color:#111111; font-size:clamp(.7rem,.78vw,.85rem); font-weight:700; letter-spacing:.12em; text-transform:uppercase;">In Odoo</span>
+        <span class="px-3 py-2" style="border:1px solid #E7E3DC; color:#555555; font-size:clamp(.7rem,.78vw,.85rem); font-weight:700; letter-spacing:.12em; text-transform:uppercase;">~1 min</span>
+      </div>
+      <h2 class="fw-bold mb-3" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1.7rem,3vw,3rem); line-height:1.1; font-weight:800; letter-spacing:-.02em; color:#111111;">Configure &amp; register the connector</h2>
+      <div class="mb-4"><p class="mb-0" style="font-size:clamp(1rem,1.25vw,1.3rem); line-height:1.6; color:#555555; max-width:46rem;">Fill in the registration form with everything you gathered, add your roles, and register.</p></div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">1</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Name, Google keys &amp; instance</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Paste the <strong style="color:#111111;">Google Client ID / Secret</strong> and set the <strong style="color:#111111;">Odoo URL</strong> and <strong style="color:#111111;">Database</strong> &mdash; the &ldquo;Use this instance&rdquo; / &ldquo;Use current DB&rdquo; shortcuts fill them in.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/config-3.jpg" alt="Name, Google keys and instance" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">2</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Add roles: API key + email</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">In <strong style="color:#111111;">Access Roles</strong>, add one line per role: name, <strong style="color:#111111;">Odoo API key</strong> and the <strong style="color:#111111;">email(s)</strong> allowed to use it.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/config-7.jpg" alt="Add roles: API key + email" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">3</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Click Register</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Press <strong style="color:#111111;">Register</strong>. Status changes to <strong style="color:#111111;">Registered</strong> and your MCP instance is provisioned.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/config-4.jpg" alt="Click Register" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ PROCESS 5 -->
+  <section id="process-5" class="py-5" style="background-color:#FBFAF7">
+    <div class="mx-auto px-3 py-lg-4" style="max-width:min(2160px,94vw)">
+      <div class="d-flex flex-wrap gap-2 mb-3">
+        <span class="px-3 py-2" style="background-color:#D0342C; color:#fff; font-size:clamp(.7rem,.78vw,.85rem); font-weight:800; letter-spacing:.16em;">PROCESS 5</span>
+        <span class="px-3 py-2" style="border:1px solid #111111; color:#111111; font-size:clamp(.7rem,.78vw,.85rem); font-weight:700; letter-spacing:.12em; text-transform:uppercase;">Odoo + Google Console</span>
+        <span class="px-3 py-2" style="border:1px solid #E7E3DC; color:#555555; font-size:clamp(.7rem,.78vw,.85rem); font-weight:700; letter-spacing:.12em; text-transform:uppercase;">~1 min</span>
+      </div>
+      <h2 class="fw-bold mb-3" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1.7rem,3vw,3rem); line-height:1.1; font-weight:800; letter-spacing:-.02em; color:#111111;">Authorize the URLs in Google</h2>
+      <div class="mb-4"><p class="mb-0" style="font-size:clamp(1rem,1.25vw,1.3rem); line-height:1.6; color:#555555; max-width:46rem;">Registration generates three URLs. Two of them go into your Google OAuth client so sign-in is trusted.</p></div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">1</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Copy the generated URLs</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;"><strong style="color:#111111;">Registration Result</strong> shows the Google Origin URL, Google Callback URL and AI Connector URL. Use the copy buttons.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/config-5.jpg" alt="Copy the generated URLs" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">2</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Paste them into Google</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;"><strong style="color:#111111;">Origin URL</strong> &rarr; Authorized JavaScript origins. <strong style="color:#111111;">Callback URL</strong> &rarr; Authorized redirect URIs. Save.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/config-6.jpg" alt="Paste them into Google" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">3</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Re-register</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Back in Odoo, click <strong style="color:#111111;">Re-register</strong>. Copy the <strong style="color:#111111;">AI Connector URL</strong> &mdash; that is the link you share with your team.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/config-7.jpg" alt="Re-register" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ PROCESS 6 -->
+  <section id="process-6" class="py-5" style="background-color:#fff">
+    <div class="mx-auto px-3 py-lg-4" style="max-width:min(2160px,94vw)">
+      <div class="d-flex flex-wrap gap-2 mb-3">
+        <span class="px-3 py-2" style="background-color:#D0342C; color:#fff; font-size:clamp(.7rem,.78vw,.85rem); font-weight:800; letter-spacing:.16em;">PROCESS 6</span>
+        <span class="px-3 py-2" style="border:1px solid #111111; color:#111111; font-size:clamp(.7rem,.78vw,.85rem); font-weight:700; letter-spacing:.12em; text-transform:uppercase;">In your AI client</span>
+        <span class="px-3 py-2" style="border:1px solid #E7E3DC; color:#555555; font-size:clamp(.7rem,.78vw,.85rem); font-weight:700; letter-spacing:.12em; text-transform:uppercase;">~1 min</span>
+      </div>
+      <h2 class="fw-bold mb-3" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1.7rem,3vw,3rem); line-height:1.1; font-weight:800; letter-spacing:-.02em; color:#111111;">Connect your AI client &amp; sign in</h2>
+      <div class="mb-4"><p class="mb-0" style="font-size:clamp(1rem,1.25vw,1.3rem); line-height:1.6; color:#555555; max-width:46rem;">Shown in Claude &mdash; the flow is the same in ChatGPT or any MCP-compatible client.</p></div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">1</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Add a custom connector</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Open <strong style="color:#111111;">Settings &rarr; Connectors</strong>, then <strong style="color:#111111;">Add &rarr; Add custom connector</strong>.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/claude-1.jpg" alt="Add a custom connector" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">2</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Name &amp; connector URL</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Any name; paste the <strong style="color:#111111;">AI Connector URL</strong> into the URL field.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/claude-2.jpg" alt="Name and connector URL" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">3</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Connect</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Click <strong style="color:#111111;">Connect</strong> to start sign-in.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/claude-3.jpg" alt="Connect" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+      <div class="row g-4 align-items-start py-4" style="border-top:1px solid #E7E3DC;">
+        <div class="col-12 col-md-5">
+          <div class="d-flex gap-3 align-items-start">
+            <span class="flex-shrink-0 d-inline-flex align-items-center justify-content-center fw-bold" style="width:clamp(34px,2.4vw,44px); height:clamp(34px,2.4vw,44px); background-color:#111111; color:#fff; font-size:clamp(.9rem,1vw,1.1rem);">4</span>
+            <div style="min-width:0;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Allow access</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Sign in with Google and click <strong style="color:#111111;">Allow Access</strong>. Only listed emails get through &mdash; each within its role&rsquo;s permissions.</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7"><img src="images/claude-4.jpg" alt="Allow access" loading="lazy" class="img-fluid d-block w-100" style="border:1px solid #E7E3DC;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ YOU ARE LIVE -->
+  <section class="py-5" style="background-color:#D0342C">
+    <div class="mx-auto px-3 py-lg-4" style="max-width:min(2160px,94vw)">
+      <div class="text-center mx-auto" style="max-width:48rem;">
+        <p class="mb-3" style="font-size:clamp(.72rem,.8vw,.9rem); font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:#fff;">Done</p>
+        <h2 class="fw-bold mb-3" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1.7rem,3vw,3rem); line-height:1.1; font-weight:800; letter-spacing:-.02em; color:#fff;">You&rsquo;re live</h2>
+        <p class="mb-0" style="font-size:clamp(1rem,1.25vw,1.3rem); line-height:1.6; color:#fff;">Your AI client now works with Odoo from desktop, web and mobile. Add or remove people any time by editing role emails and re-registering &mdash; nothing changes on their side.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ SECURITY -->
+  <section class="py-5" style="background-color:#fff">
+    <div class="mx-auto px-3 py-lg-4" style="max-width:min(2160px,94vw)">
+      <p class="mb-3" style="font-size:clamp(.72rem,.8vw,.9rem); font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:#D0342C;">Security by design</p>
+      <h2 class="fw-bold mb-3" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1.7rem,3vw,3rem); line-height:1.1; font-weight:800; letter-spacing:-.02em; color:#111111;">Safe access, on your terms</h2>
+      <div class="row g-4 mt-3">
+        <div class="col-12 col-sm-6 col-lg-3"><div class="h-100 p-4" style="background-color:#fff; border:1px solid #E7E3DC;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Google OAuth only</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">No valid Google account in a role means no access. Every request is authenticated.</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-3"><div class="h-100 p-4" style="background-color:#fff; border:1px solid #E7E3DC;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Real Odoo permissions</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Each person acts as their mapped Odoo user &mdash; the AI never gets super-access.</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-3"><div class="h-100 p-4" style="background-color:#fff; border:1px solid #E7E3DC;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Data stays in Odoo</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">The connector is a gateway to your API. We don&rsquo;t copy or store your database.</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-3"><div class="h-100 p-4" style="background-color:#fff; border:1px solid #E7E3DC;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Isolated per tenant</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Each customer runs on a dedicated, isolated instance over HTTPS.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ REQUIREMENTS -->
+  <section class="py-5" style="background-color:#FBFAF7">
+    <div class="mx-auto px-3 py-lg-4" style="max-width:min(2160px,94vw)">
+      <p class="mb-3" style="font-size:clamp(.72rem,.8vw,.9rem); font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:#D0342C;">Requirements</p>
+      <h2 class="fw-bold mb-3" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1.7rem,3vw,3rem); line-height:1.1; font-weight:800; letter-spacing:-.02em; color:#111111;">What you need</h2>
+      <div class="mb-5"><p class="mb-0" style="font-size:clamp(1rem,1.25vw,1.3rem); line-height:1.6; color:#555555; max-width:46rem;">A running Odoo, a Google Cloud project and an MCP-capable AI client. That&rsquo;s it.</p></div>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3"><div class="h-100 p-4" style="background-color:#fff; border:1px solid #E7E3DC;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Odoo</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Community or Enterprise &mdash; Odoo.sh, on-premise or self-hosted.</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-3"><div class="h-100 p-4" style="background-color:#fff; border:1px solid #E7E3DC;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Odoo API key</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">One per role you want to expose.</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-3"><div class="h-100 p-4" style="background-color:#fff; border:1px solid #E7E3DC;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Google Cloud project</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">For the OAuth client used at sign-in.</p></div></div>
+        <div class="col-12 col-sm-6 col-lg-3"><div class="h-100 p-4" style="background-color:#fff; border:1px solid #E7E3DC;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">MCP AI client</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Claude, ChatGPT or any client with custom MCP connectors.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ FAQ -->
+  <section class="py-5" style="background-color:#fff">
+    <div class="mx-auto px-3 py-lg-4" style="max-width:min(2160px,94vw)">
+      <p class="mb-3" style="font-size:clamp(.72rem,.8vw,.9rem); font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:#D0342C;">FAQ</p>
+      <h2 class="fw-bold mb-3" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1.7rem,3vw,3rem); line-height:1.1; font-weight:800; letter-spacing:-.02em; color:#111111;">Frequently asked questions</h2>
+      <div class="row g-4 mt-3">
+        <div class="col-12 col-md-6"><div class="h-100 pt-3" style="border-top:2px solid #111111;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Do I have to give people my Odoo password?</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">No. You share one connector link. Users sign in with Google; access is decided by their email and its role.</p></div></div>
+        <div class="col-12 col-md-6"><div class="h-100 pt-3" style="border-top:2px solid #111111;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Does it work with ChatGPT too?</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Yes. Any AI client that supports custom MCP connectors works &mdash; the connector URL is the same.</p></div></div>
+        <div class="col-12 col-md-6"><div class="h-100 pt-3" style="border-top:2px solid #111111;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Can I limit someone to read-only?</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Yes. Point a role at an Odoo user with read-only rights and add their email.</p></div></div>
+        <div class="col-12 col-md-6"><div class="h-100 pt-3" style="border-top:2px solid #111111;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Are custom modules supported?</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Yes. The connector reads models and fields directly from your Odoo, so custom ones work out of the box.</p></div></div>
+        <div class="col-12 col-md-6"><div class="h-100 pt-3" style="border-top:2px solid #111111;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Where does my data live?</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">In your Odoo. The connector proxies authorized API calls and keeps no copy of your database.</p></div></div>
+        <div class="col-12 col-md-6"><div class="h-100 pt-3" style="border-top:2px solid #111111;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">Someone joined or left &mdash; what do I do?</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">Edit the role&rsquo;s email list and press Re-register. Access updates instantly.</p></div></div>
+        <div class="col-12 col-md-6"><div class="h-100 pt-3" style="border-top:2px solid #111111;"><h5 class="fw-bold mb-2" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1rem,1.1vw,1.25rem); color:#111111;">What does it cost?</h5><p class="mb-0" style="font-size:clamp(.92rem,1vw,1.1rem); line-height:1.6; color:#555555;">The module is free, and the first month of the connector service is free. After that it&rsquo;s &euro;8 per user per month.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ CTA -->
+  <section class="py-5" style="background-color:#111111">
+    <div class="mx-auto px-3 py-lg-4" style="max-width:min(2160px,94vw)">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <p class="mb-3" style="font-size:clamp(.72rem,.8vw,.9rem); font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:#fff;">ERP SWISS &nbsp;&middot;&nbsp; Official Odoo Partner</p>
+          <h2 class="fw-bold mb-3" style="font-family:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size:clamp(1.7rem,3vw,3rem); line-height:1.1; font-weight:800; letter-spacing:-.02em; color:#fff;">Give your team an AI line to&nbsp;Odoo</h2>
+          <p class="mb-0" style="font-size:clamp(.95rem,1.1vw,1.2rem); line-height:1.6; color:#fff;">Free module &middot; 1st month free, then &euro;8 per user / month &middot; Community &amp; Enterprise &middot; Claude, ChatGPT &amp; any MCP client</p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a href="https://www.erpswiss.com" target="_blank" class="d-inline-block px-4 py-3 text-decoration-none fw-bold" style="background-color:#D0342C; color:#fff; font-size:clamp(.95rem,1vw,1.1rem); letter-spacing:.04em;">Need help? erpswiss.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
